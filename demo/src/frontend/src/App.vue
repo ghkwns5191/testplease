@@ -118,11 +118,11 @@ export default {
       window.location.reload(true);
     }
   },
-  mounted(){
-    var token = window.localStorage.getItem("user");
-    var Jsontoken = JSON.parse(token);
-    this.username = Jsontoken.username;
-  }
+  // mounted(){
+  //   var token = window.localStorage.getItem("user");
+  //   var Jsontoken = JSON.parse(token);
+  //   this.username = Jsontoken.username;
+  // }
 };
 </script>
 
