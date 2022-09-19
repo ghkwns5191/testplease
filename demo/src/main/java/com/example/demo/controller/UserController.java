@@ -56,17 +56,5 @@ public class UserController {
 		}
 	}
 	
-	@PutMapping("/auth/user/modify/{username}")
-	public ResponseEntity<User> modifyUserDetail(@PathVariable("username") String username){
-		try {
-			Optional<User> userData = userRepository.findByUsername(username);
-			User user = userData.get();
-			user.setEmail(user.getEmail());
-			return new ResponseEntity<>(this.userRepository.save(user), HttpStatus.OK);
-		} catch(Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-			
-		}
-	}
 	
 }
