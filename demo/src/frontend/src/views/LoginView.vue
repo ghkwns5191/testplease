@@ -83,7 +83,7 @@ export default {
         if (this.user.username && this.user.password) {
           this.$store.dispatch('auth/login', this.user).then(
             () => {
-              this.$router.push('/home');
+              this.$router.go(0);
             },
             error => {
               this.loading = false;
