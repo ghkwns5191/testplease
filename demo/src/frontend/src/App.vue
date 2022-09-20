@@ -15,22 +15,22 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/product/화분식물" style="color: rgb(64, 64, 64)" class="nav-link">
+          <router-link to="/product/화분식물" style="color: rgb(64, 64, 64)" @click="refreshList" class="nav-link">
             화분식물
           </router-link>
         </li>
         <li class="nav-item" >
-          <router-link to="/product/공중식물" style="color: rgb(64, 64, 64)" class="nav-link">
+          <router-link to="/product/공중식물" style="color: rgb(64, 64, 64)" @click="refreshList" class="nav-link">
             공중식물
           </router-link>
         </li>
         <li class="nav-item" >
-          <router-link to="/product/다육식물" style="color: rgb(64, 64, 64)" class="nav-link">
+          <router-link to="/product/다육식물" style="color: rgb(64, 64, 64)" @click="refreshList" class="nav-link">
             다육식물
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/product/기타상품" style="color: rgb(64, 64, 64); margin-right: 600px;" class="nav-link">
+          <router-link to="/product/기타상품" style="color: rgb(64, 64, 64); margin-right: 600px;" @click="refreshList" class="nav-link">
             기타상품
           </router-link>
         </li>
@@ -45,7 +45,7 @@
           </router-link>
         </li>
         <li v-if="showAdminBoard" class="nav-item">
-          <router-link to="/admin" class="nav-link" style="color: rgb(64, 64, 64)">관리자페이지</router-link>
+          <router-link to="/admin/user" class="nav-link" style="color: rgb(64, 64, 64)">관리자페이지</router-link>
         </li>
         <li class="nav-item">
           <router-link v-if="showUserBoard" :to="`/user/detail/${username}`" class="nav-link" style="color: rgb(64, 64, 64)">마이페이지</router-link>
@@ -115,7 +115,7 @@ export default {
       this.$router.push('/login');
     },
     refreshList() {
-      window.location.reload(true);
+      this.$route.go(0);
     }
   },
   created(){
