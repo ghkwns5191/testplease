@@ -144,7 +144,7 @@
                     aaddress1: "",
                     aaddress2: ""
                 },
-                직접입력: {
+                manualInput: {
                     aname: "직접 입력",
                     areceipt: "", 
                     amobile: "",
