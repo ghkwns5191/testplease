@@ -255,7 +255,7 @@
             this.selectedAddress.aaddress1 = fullRoadAddr;
             } else if(this.selectedAddress == "직접 입력"){
                 this.manualInput.apostcode = data.zonecode;
-                this.manuaLInput.aaddress1 = fullRoadAddr;
+                this.manualInput.aaddress1 = fullRoadAddr;
                 console.log(this.manualInput);
             }
         }
