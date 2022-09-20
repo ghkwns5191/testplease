@@ -118,7 +118,7 @@ export default {
       window.location.reload(true);
     }
   },
-  created(){
+  updated(){
     var token = window.localStorage.getItem("user");
     var Jsontoken = JSON.parse(token);
     if(Jsontoken != null){
