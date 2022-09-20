@@ -307,6 +307,10 @@ export const router = new Router({
       name: 'user-detail',
       component: userDetail
     },
+    {
+      path: '*',
+      redirect: '/404'
+    },
 
   ]
 });
