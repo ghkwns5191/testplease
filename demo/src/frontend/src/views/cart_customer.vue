@@ -57,7 +57,7 @@
         </div>
       </div>
       <div>
-        <label id="total_price" style="float: right; margin-right: 500px">
+        <label id="total_price" style="float: right; margin-right: 110px">
           합계 : {{ total }}
           
         </label>

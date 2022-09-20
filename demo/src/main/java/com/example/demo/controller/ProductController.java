@@ -42,7 +42,6 @@ public class ProductController {
 	@Autowired
 	ImageFileService fileService;
 
-	
 	// 목록
 	@GetMapping("/{ptype}")
 	public ResponseEntity<List<Product>> productList(@PathVariable("ptype") String ptype) {
@@ -61,6 +60,12 @@ public class ProductController {
 		} catch(Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+	
+	// 검색
+	@GetMapping("/{ptype}/{pname}")
+	public ResponseEntity<List<Product>> searchProduct(@PathVariable("ptype") String ptype, @PathVariable("pname") String pname) {
+		return new ResponseEntity<>(productService.search(ptype, pname), HttpStatus.OK);
 	}
 	
 	// 관리자 상품관리 리스트

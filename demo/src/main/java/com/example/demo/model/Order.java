@@ -1,4 +1,5 @@
 package com.example.demo.model;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import lombok.Getter;
 import lombok.Setter;
+
 @CrossOrigin(origins = "http://localhost:8081")
 @Entity
 @Table(name = "orders")
@@ -30,16 +32,16 @@ public class Order {
 	
 	@JoinColumn(name = "pname")
 	private String pname; // 상품명
-
+	
 	//@JoinColumn(name = "pprice")
 	private String pprice;
-
+	
 	@JoinColumn(name = "pstock")
 	private Integer pstock; // 상품 갯수
-
+	
 	//@JoinColumn(name = "pid")
 	private String pid;
-
+	
 	@JoinColumn(name = "pimg1")
 	private String pimg1; // 상품 이미지
 	
@@ -60,12 +62,12 @@ public class Order {
 	
 	@Column(length = 50/*, nullable = false*/)
 	private String opayment;//결제 수단
-
+	
 	private Integer ototal;
-
+	
 	@Column(columnDefinition = "varchar(50) default '결제완료'")
 	private String ostatus;//주문 상태
-
+	
 	private LocalDate odate; //주문일
 	
 //	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -75,7 +77,7 @@ public class Order {
 //		orderProducts.add(orderProduct);
 //		orderProduct.setOrder(this);
 //	}
-
+	
 	public Order(String oname, Integer ocount, String oaddress, String ophone, String opost, String opayment,
 			LocalDate odate, String pname, Integer ototal,String pprice, Integer pstock, String pid, String ostatus,String pimg1, String username) {
 		this.oname = oname;
@@ -94,7 +96,7 @@ public class Order {
 		this.ototal = ototal;
 		this.username = username;
 	}
-
+	
 	public Order(String oname, Integer ocount, String oaddress, String ophone, String opost, String opayment,
 			LocalDate odate, String pname, String pprice) {
 		this.oname = oname;
@@ -108,7 +110,7 @@ public class Order {
 		this.ototal = ototal;
 		this.pprice = pprice;
 	}
-
+	
 	public Order(String pid, String pname, String pprice,Integer ototal, Integer ocount, String pimg1,LocalDate odate,String username) {
 		this.pid = pid;
 		this.pname = pname;
@@ -123,4 +125,5 @@ public class Order {
 	public Order() {
 		// TODO Auto-generated constructor stub
 	}
+
 }

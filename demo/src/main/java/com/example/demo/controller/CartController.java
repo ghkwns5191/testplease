@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Cart;
+import com.example.demo.model.User;
 import com.example.demo.repository.CartRepository;
 import com.example.demo.repository.ProductRepository;
+import com.example.demo.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,6 +37,9 @@ public class CartController {
 	
 	@Autowired
 	private final ProductRepository productRepository;
+
+	@Autowired
+	private final UserRepository userRepository;
 
 	@GetMapping("/auth/cart/list/{username}")
 	public ResponseEntity<List<Cart>> cartList(@RequestParam(required = false) Integer cid, @PathVariable("username") String username){
@@ -100,6 +105,17 @@ public class CartController {
 			return new ResponseEntity<>(newCart, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@DeleteMapping("/auth/cart/deleteall/{username}")
+	public ResponseEntity<HttpStatus> deletecartListByUsername(@PathVariable("username") String username){
+		try {
+			List<Cart> cartList = cartRepository.findAllByUsername(username);
+			cartRepository.deleteAll(cartList);
+			return new ResponseEntity<>(HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }

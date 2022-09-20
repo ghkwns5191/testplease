@@ -12,7 +12,7 @@
             <br>
             
             <!-- 공지사항 목록 -->
-            <table class="text-center">
+            <table style="text-align:center;">
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -23,7 +23,7 @@
                 <tbody >
                     <tr v-for="(notice, index) in notices" :key="index">
                         <td> {{index+1}}</td>
-                        <td><!-- 여러 줄은 화면에 어떻게 보이는지 확인 -->
+                        <td style="text-align: center;"><!-- 여러 줄은 화면에 어떻게 보이는지 확인 -->
                             <!-- <a :href="`/list/detail/` + `currentNotice.nid`">  -->
                             <router-link :to="`/notice/detail/${notice.nid}`">{{notice.ntitle}} </router-link>
                             <!-- </a> -->
@@ -34,12 +34,7 @@
             </table>
 
             <!-- 페이지 기능 -->
-            <p id="paging">
-                <button>1</button>
-                <button>2</button>
-                <button style="color:white; background-color:rgb(22, 160, 133)">3</button>
-                <button>4</button>
-            </p>
+          
         </div>
     
     </section>

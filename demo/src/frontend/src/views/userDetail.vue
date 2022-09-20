@@ -19,6 +19,7 @@
                 <tr>
                     <td> 이메일 </td> <td> &nbsp;&nbsp;|&nbsp;&nbsp; <input type="text" disabled class="emailInput" v-model="currentUser.email" style="width: 200px;"> </td>
                 </tr>
+                
                 </tbody>
             </table>
         </div>
@@ -55,18 +56,22 @@
                 .then(response => {
                     console.log(response.data);
                     this.currentUser = response.data;
+                    console.log(this.currentUser.password);
+                    console.log(this.currentUser.password == "test1234");
                 }).catch(e => {
                     console.log(e);
                 })
             },
            
         },
-        mounted(){
+        created(){
             var usernameToken = window.localStorage.getItem("user");
             var usernameTokenJson = JSON.parse(usernameToken);
             this.username = usernameTokenJson;
 
             this.getUser(this.$route.params.username);
+
+            
 
         }
     }
