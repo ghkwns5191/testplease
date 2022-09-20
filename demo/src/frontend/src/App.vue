@@ -115,7 +115,7 @@ export default {
       this.$router.push('/login');
     },
     refreshList() {
-      this.$route.go(0);
+      location.reload();
     }
   },
   created(){
