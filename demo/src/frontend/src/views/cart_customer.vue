@@ -1,11 +1,11 @@
 <template>
   <div>
     <div id="root" class="root" style="margin-bottom: 500px;">
+      <div v-if="cartlist != []">
       <div
         id="cart_item"
         v-for="(cart, index) in cartlist"
         :key="index"
-        
       >
         <!-- 장바구니 아이템 목록 반복문으로 구현 예정 -->
         <div>
@@ -73,6 +73,9 @@
               <li class="page-item"><a class="page-link" href="#">3</a></li>
             </ul>
         </nav>  -->
+      </div>
+
+      <div v-else><h3> 현재 장바구니가 비었습니다. </h3></div>
     </div>
 
     
