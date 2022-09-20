@@ -36,7 +36,7 @@
                 <th style=""><select style="width: 130px; margin-top: 100px; justify-content: center; margin-top: 0px;" v-model="selectedAddress" >
                     <option disabled selected="selected"> 배송지 선택</option>
                     <option v-for="(address, index) in addressList" :key="index" :value="address">{{address.aname}}</option>
-                    <option >{{직접입력.aname}}</option>
+                    <option >{{manualInput.aname}}</option>
                  </select></th>
             </thead>
             <tbody style="border: 1px solid black;" >
@@ -67,25 +67,25 @@
                 <th style=""><select style="width: 130px; margin-top: 100px; justify-content: center; margin-top: 0px;" v-model="selectedAddress" >
                     <option disabled selected="selected"> 배송지 선택</option>
                     <option v-for="(address, index) in addressList" :key="index" :value="address">{{address.aname}}</option>
-                    <option >{{직접입력.aname}}</option>
+                    <option >{{manualInput.aname}}</option>
                  </select></th>
             </thead>
             <tbody style="border: 1px solid black;" >
                 
                 <tr style="border: 1px solid black;">
                     <th style="border: 1px solid black; background-color: rgb(224,224,224);">수령인명</th>
-                    <td><input type="text" v-model="직접입력.areceipt" placeholder="수령인 성함을 입력하세요" style="width: 300px;"></td>
+                    <td><input type="text" v-model="manualInput.areceipt" placeholder="수령인 성함을 입력하세요" style="width: 300px;"></td>
                 </tr>
                 
                 <tr style="border: 1px solid black;">
                     <th style="border: 1px solid black; background-color: rgb(224,224,224);">휴대전화번호</th>
-                    <td><input type="text" v-model="직접입력.amobile" placeholder="'-' 를 포함하여 연락처를 입력하세요" style="width: 300px;"></td>
+                    <td><input type="text" v-model="manualInput.amobile" placeholder="'-' 를 포함하여 연락처를 입력하세요" style="width: 300px;"></td>
                 </tr>
                 <tr style="border: 1px solid black;">
                     <th style="border-bottom: none; border: 1px solid black; background-color: rgb(224,224,224);">주소</th>
-                    <td style="border-bottom: none;"><input type="text" v-model="직접입력.apostcode" style="width: 80px;" readonly>&nbsp;<button class="findbtn" type="button" style="font-size: 9px; width: 100px;height: 20px; background-color: rgb(22,160,133); border: none; border-radius: 8px; color: white; font-weight: bold;" @click="showApi">우편번호찾기</button><br>
-                        <input type="text" v-model="직접입력.aaddress1" style="margin-top: 3px; width: 300px;" readonly placeholder="우편번호찾기를 먼저 이용해주세요"><br> 
-                        <input type="text" v-model="직접입력.aaddress2" style="margin-top: 3px; width: 300px;" placeholder="상세주소를 입력하세요"></td>
+                    <td style="border-bottom: none;"><input type="text" v-model="manualInput.apostcode" style="width: 80px;" readonly>&nbsp;<button class="findbtn" type="button" style="font-size: 9px; width: 100px;height: 20px; background-color: rgb(22,160,133); border: none; border-radius: 8px; color: white; font-weight: bold;" @click="showApi">우편번호찾기</button><br>
+                        <input type="text" v-model="manualInput.aaddress1" style="margin-top: 3px; width: 300px;" readonly placeholder="우편번호찾기를 먼저 이용해주세요"><br> 
+                        <input type="text" v-model="manualInput.aaddress2" style="margin-top: 3px; width: 300px;" placeholder="상세주소를 입력하세요"></td>
                 </tr>
             </tbody>
         </table>
@@ -304,9 +304,9 @@
             this.selectedAddress.apostcode = data.zonecode; //5자리 새우편번호 사용
             this.selectedAddress.aaddress1 = fullRoadAddr;
             } else if(this.selectedAddress == "직접 입력"){
-                this.직접입력.apostcode = data.zonecode;
-                this.직접입력.aaddress1 = fullRoadAddr;
-                console.log(this.직접입력);
+                this.manualInput.apostcode = data.zonecode;
+                this.manualInput.aaddress1 = fullRoadAddr;
+                console.log(this.manualInput);
             }
         }
       }).open()

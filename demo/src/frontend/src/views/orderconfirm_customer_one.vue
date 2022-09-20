@@ -36,7 +36,7 @@
                 <th style=""><select style="width: 130px; margin-top: 100px; justify-content: center; margin-top: 0px;" v-model="selectedAddress" >
                     <option disabled selected="selected"> 배송지 선택</option>
                     <option v-for="(address, index) in addressList" :key="index" :value="address">{{address.aname}}</option>
-                    <option >{{직접입력.aname}}</option>
+                    <option >{{manualInput.aname}}</option>
                  </select></th>
             </thead>
             <tbody style="border: 1px solid black;" >
@@ -254,9 +254,9 @@
             this.selectedAddress.apostcode = data.zonecode; //5자리 새우편번호 사용
             this.selectedAddress.aaddress1 = fullRoadAddr;
             } else if(this.selectedAddress == "직접 입력"){
-                this.직접입력.apostcode = data.zonecode;
-                this.직접입력.aaddress1 = fullRoadAddr;
-                console.log(this.직접입력);
+                this.manualInput.apostcode = data.zonecode;
+                this.manuLInput.aaddress1 = fullRoadAddr;
+                console.log(this.manualInput);
             }
         }
       }).open()
