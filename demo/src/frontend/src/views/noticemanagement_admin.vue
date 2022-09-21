@@ -28,7 +28,7 @@
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th>구분</th>
+                            <th>번호</th>
                             <th>제목</th>
                             <th>작성일</th>
                             <th>수정일</th>
@@ -37,7 +37,7 @@
                     <tbody>
                         <tr v-for="(notice, index) in notices" :key="index" >
                             <td>{{index+1}}</td>
-                            <td style="text-decoration: none; text-align: center;"><router-link :to="`/admin/notice/detail/${notice.nid}`">{{notice.ntitle}} </router-link> </td>
+                            <td style="text-decoration: none;"><router-link :to="`/admin/notice/detail/${notice.nid}`">{{notice.ntitle}} </router-link> </td>
                             <td>{{notice.nrdate}}</td>
                             <td style="border-bottom: solid 1px lightgray">
                                 {{notice.nmodifydate}}
@@ -48,7 +48,7 @@
                 </table>
     
                 <!-- 페이지 기능 -->
-               <!-- <pagination :pageSetting="pageDataSetting(total, limit, block, this.page)" @paging="pagingMethod" /> -->
+               <pagination :pageSetting="pageDataSetting(total, limit, block, this.page)" @paging="pagingMethod" />
             </div>
             
     </div>
@@ -209,11 +209,8 @@
     }
     #notice-manager tbody tr td:nth-child(2) {  /* 제목 */
         width: 45%;
-        text-align: left;
     }
-    #notice-manager tbody tr td:nth-child(2) span {
-        margin-left: 5%;
-    }
+    
     #notice-manager tbody tr td:nth-child(3) {  /* 기간 */
         width: 25%;
     }

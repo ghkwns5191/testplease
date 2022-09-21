@@ -4,10 +4,11 @@
     <side-menu></side-menu>
 <div id="root" class="root">
     
-    <div class="title"> 
+    <div style="background-color: rgb(224,224,224); width: 140px; padding: 5px; border-radius: 5px;"> 
         <h2> 공지사항 </h2>
-        <hr>
+        
     </div>
+    <hr>
     
     
     <table>
