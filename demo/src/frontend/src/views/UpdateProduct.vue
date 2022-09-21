@@ -25,12 +25,12 @@
                 </p>   
                 <p>
                     <!-- <input type="file" ref="file" id="pimg1" @change="selectFile"> -->
-                    <img :src="currentProduct.pimg1" class="">
+                    <img :src="currentProduct.pimg1" style="width: 400px; width: 400px; margin-left: -300px;">
                 </p>
                 <p>
                     <textarea class="form-control" rows="10" v-model="currentProduct.pdetail" id="pdetail" placeholder="상세정보 입력"></textarea>
                 </p>
-                <button type="button" class="btn" @click="updateProduct">수정</button>
+                <button type="button" class="btn" @click="updateProduct" style="float: left; margin-left: 350px;">수정</button>
             </form>
         </div>
   </div>
