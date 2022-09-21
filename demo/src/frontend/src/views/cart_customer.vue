@@ -75,7 +75,7 @@
         </nav>  -->
       </div>
 
-      <div v-else><h3> 현재 장바구니가 비었습니다. </h3></div>
+      <div v-else style="text-align: center;"><h3> 현재 장바구니가 비었습니다. </h3></div>
     </div>
 
     

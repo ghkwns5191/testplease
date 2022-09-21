@@ -58,7 +58,7 @@ import reviewDetailAdmin from '../views/reviewDetailAdmin.vue';
 import userList from '../views/userListAdmin.vue';
 import userDetail from '../views/userDetail.vue';
 
-import NotFoundRouter from '../views/NotFound.vue';
+import interiorView from '../views/interiorView.vue';
 
 Vue.use(Router);
 export const router = new Router({
@@ -310,8 +310,9 @@ export const router = new Router({
       component: userDetail
     },
     {
-      path: '*',
-      component: NotFoundRouter,
+      path: '/interior',
+      name: 'interior-view',
+      component: interiorView
     },
 
   ]

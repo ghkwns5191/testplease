@@ -40,6 +40,11 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/interior" style="color: rgb(64, 64, 64)" class="nav-link">
+            인테리어
+          </router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/chatbot" style="color: rgb(64, 64, 64)" class="nav-link">
             챗봇상담
           </router-link>
