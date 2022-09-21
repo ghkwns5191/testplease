@@ -88,6 +88,39 @@
 
       <router-view />
 
+
+      <hr style="margin-top: 100px;">
+      <div class="footer" style="float: left; margin-top: 20px; height: 100px;">
+        <div style="float: left; margin-left: 300px; font-size: 12px; display: block;">
+            회사소개<br>
+            대표 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 홍길동 <br>
+            주소 | 서울특별시 강남구 언주로 508 14층 <br>
+            사업자등록번호 | OOO-OO-OOOOO <br>
+            전화 | OOO-OOOO-OOOO <br>
+            이메일 | email@gmail.com <br> 
+        </div>
+        <div style="float: left; margin-left: 170px; font-size: 12px;">
+            고객센터<br>
+            전화 | OOO-OOOO-OOOO <br>
+            이메일 | email@gmail.com <br>
+            이용시간 | 월~금 09:00 - 18:00 <br> 
+            점심시간 | 12:00 - 13:00 <br>
+            휴무 | 토, 일, 공휴일은 off <br>
+        </div>
+        <div style="float: left;margin-left: 170px; font-size: 12px;">
+            계좌정보<br>
+            OO은행 | 123-12-12345 통신판매업 신고번호 제2022-서울 강남-00001호 [사업자정보확인] <br>
+            예금주 | OOO <br> <br>
+            택배사<br>
+            한진택배(1588-0011) <br>
+            copyright &copy; 트레플 All right reserved.
+        </div>
+        <div style="float: left; margin-left: 100px;">
+           
+        </div>
+      </div>
+
+
   </div>
 </template>
 <script>
@@ -95,6 +128,7 @@ export default {
   data() {
     return  {
       username: "",
+      logo: "logo"
     }
   },
   computed: {

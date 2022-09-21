@@ -1,9 +1,13 @@
 <template>
+  <div style="margin-left: 350px;">
+ 
+   
+    <div style="margin-top: 100px;" >
+
+<!--   
   <div class="container">
-    <!-- <header class="jumbotron">
-      <h3>{{content}}</h3>
-    </header> -->
-    <div class="slideshow-container">
+   
+    <div class="slideshow-container"> -->
        <img :src ="banner1">               
     </div>
 
@@ -24,9 +28,10 @@
     margin-top: 20px; margin-left: 50px;">
   플랜테리어는 식물(plants)과 인테리어(interior)의 합성어로 식물을 활용한 인테리어를 의미합니다.<br>
   플랜테리어는 '어떤 공간'에 '어떤 식물'을 '어떻게 배치' 하고 '어떻게 관리' 에 따라 다른 무드를 저희와 함께 만들어가세요.</P> <br>
-  <router-link to="/interior" tag="button" style="float:left; margin-left: 50px; margin-bottom: 100px; color: white; text-align: center; line-height: 35px; vertical-align: middle; text-decoration: none; width: 100px; height: 35px;  font-size: 14px; font-weight: bold; background-color: rgb(22, 160, 133); margin-top: 15px;">VIEW MORE</router-link> <br>
+  <router-link to="/interior" tag="button" style="float:left; margin-left: 50px; margin-bottom: 100px; color: white; text-align: center; line-height: 35px; vertical-align: middle; text-decoration: none; width: 100px; height: 35px;  font-size: 14px; font-weight: bold; background-color: rgb(22, 160, 133); margin-top: 15px; border: none;">VIEW MORE</router-link> <br>
 
   </div>
+
 </template>
 
 <script>
