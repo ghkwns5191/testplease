@@ -89,7 +89,7 @@
       <router-view />
 
 
-      <hr style="margin-top: 100px;">
+      <hr style="margin-top: 300px;">
       <div class="footer" style="float: left; margin-top: 20px; height: 100px;">
         <div style="float: left; margin-left: 300px; font-size: 12px; display: block;">
             회사소개<br>
@@ -112,7 +112,7 @@
             OO은행 | 123-12-12345 통신판매업 신고번호 제2022-서울 강남-00001호 [사업자정보확인] <br>
             예금주 | OOO <br> <br>
             택배사<br>
-            한진택배(1588-0011) <br>
+            한진택배 (1588-0011) <br>
             copyright &copy; 트레플 All right reserved.
         </div>
         <div style="float: left; margin-left: 100px;">
