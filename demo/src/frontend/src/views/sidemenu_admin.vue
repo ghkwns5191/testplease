@@ -16,15 +16,16 @@
          data () {
          return{
         
-    
-          lists: [
+            lists: [
             {link: '/admin/user', title: "회원관리"},
-            {link: '/admin/notice', title: "공지사항관리"},
-            {link: '/admin/orders', title: "주문관리"},
-            {link: '/admin/question', title: "문의사항관리"},
-            {link: '/admin/review', title: "리뷰관리"},
             {link : '/admin/addProduct', title: "상품등록"},
             {link: '/admin/ProductManage', title: "상품관리"},
+            {link: '/admin/orders', title: "주문관리"},
+            {link: '/admin/notice', title: "공지사항관리"},
+            {link: '/admin/faq', title: "FAQ관리"},
+            {link: '/admin/question', title: "문의사항관리"},
+            {link: '/admin/review', title: "리뷰관리"},
+            {link: '/6', title: "매출관리"},
           ]
          }
          },
@@ -46,7 +47,7 @@
         padding: 0;
         margin: 0;
         position: fixed;
-        height: 260px;
+        height: 340px;
         overflow: auto;
     
     }

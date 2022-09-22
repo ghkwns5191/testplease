@@ -32,7 +32,7 @@
              type: "post",
              dataType: "text",
              async: false,
-             url: "http://115.85.180.27:8090/api/chatbot/chatbot",
+             url: "http://49.50.161.140:8090/api/chatbot/chatbot",
              data: 
             {
                 query:$('#queryin').val()

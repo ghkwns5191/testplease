@@ -7,8 +7,8 @@
             <table style="width: 1200px; margin-left: 100px;">
                 <thead style="border-top: solid 1.5px black; border-bottom: 0.5px solid black;">
                     <tr>
-                        <th style="width: 90%;">{{currentNotice.ntitle}}</th>
-                        <th style="width: 10%;"></th>
+                        <th style="width: 85%;">{{currentNotice.ntitle}}</th>
+                        <th style="width: 15%;"></th>
                         
                     </tr>
                 </thead>

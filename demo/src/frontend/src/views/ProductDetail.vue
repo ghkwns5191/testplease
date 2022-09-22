@@ -46,7 +46,7 @@
                                     <div id="tab1" class="cont">
                                         <!-- Detail 버튼 화면 구성 시작-->
                                        <div id="prdDetailContent"><br>
-                                        <h1> Product Details </h1><br>
+                                            <h1> Product Details </h1><br>
                                             {{ currentProduct.pname }} <br><br>
                                             <img :src="currentProduct.pimg1" class="img-size" ><br><br>
                                             <div v-html="parseDetail"></div>
@@ -63,8 +63,9 @@
 
                                             
                                             <router-link to="/chatbot" style="font-weight: bold; margin-top: -30px;" class="nav-link">
-                                                ▷ ▶ 챗봇상담 바로가기 ◁ ◀ 
+                                                ▷ ▶ 챗봇상담 바로가기 ◀ ◁ 
                                             </router-link>
+                                            
                                             <br><br>
                                        </div>
                                        <!-- Detail 버튼 화면 구성 끝-->
@@ -84,7 +85,7 @@
                                                     <p v-if="currentReview.rmodifydate == null">{{currentReview.rdate}}</p>
                                                     <p v-if="currentReview.rmodifydate != null">{{currentReview.rmodifydate}}(수정)</p>
                                                     <p class="reviewContent"> {{ currentReview.rcontent}}</p>
-                                                    <div style="margin-bottom: 20px;" id="reviewBtn">
+                                                    <div style="margin-bottom: 20px;" id="reviewBtn" v-if="currentReview.username == username">
                                                         <button @click="deleteReview" style="background-color: rgb(22,160,133); color: white; font-weight: bold; border:none; border-radius: 5px;">삭제</button>
                                                         <router-link :to="`/review/modify/${currentReview.rid}`" tag="button" style="background-color: rgb(22,160,133); color: white; font-weight: bold; border:none; border-radius: 5px;">수정</router-link>
                                                         
@@ -127,34 +128,17 @@
                                                     </tbody>
                                                 </table>
 
-                                               
-                                                <!-- <p id="paging">
-                                                    <button style="color:white; background-color:rgb(22, 160, 133)">1</button>
-                                                    <button>2</button>
-                                                    <button >3</button>
-                                                    <button>4</button>
-                                                </p> -->
-                                                <!-- 페이징 부트스트랩 코드 -->
-                                                <!-- <nav style="z-index: -1;">
-                                                    <ul class="pagination pagination-sm d-flex justify-content-center">
-                                                      <li class="page-item active" aria-current="page">
-                                                        <span class="page-link">1</span>
-                                                      </li>
-                                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    </ul>
-                                                </nav>    -->
+                                            
                                         </div>  
                                          
                                         <!-- Review 화면 구성 끝-->                      
                                     </div>
                                 </li>
-                               <!-- Q&A 버튼 화면 전환-->
+                                <!-- Q&A 버튼 화면 전환-->
                                 <li>
                                     <button type="button" class="btn">FAQ/Q&A</button>
                                     <div id="tab3" class="cont">
                                         <!-- Q&A 화면 구성 시작 -->
-
                                         <div id="qnaContent">
                                             <h3>FAQ/Q&A</h3> <hr>
                                             <button type="button" id="createqnaBtn" @click="addqna_customer()">문의하기</button>
@@ -168,7 +152,7 @@
                                             <div class="submit-form">
                                                 <section>
                                                     <div id="faq-main">
-                                                        <table class="text-center">
+                                                        <table v-if="faqs != []" class="text-center">
                                                             <thead>
                                                                 <tr>
                                                                     <th>번호</th>
@@ -187,7 +171,7 @@
                                                         </table>
                                                     </div>
                                                 </section>
-                                            </div>                                       
+                                            </div>                  
                                             <!-- 문의글 상세 내용 -->
                                             <div v-if="questionShow" id="questionDetail">
                                                 <h4>{{ currentQuestion.qtitle }}</h4>
@@ -206,7 +190,7 @@
                                                     <h4>{{ currentAnswer.atitle }}</h4>
                                                     {{ currentAnswer.adate }}
                                                     <p class="qnaContent"> {{ currentAnswer.acontent }} </p>
-                                                    <p id="answerBtn">
+                                                    <p id="answerBtn" >
                                                         <button v-if="username == 'admin'" @click="deleteAnswer(currentAnswer.aid)">삭제</button>
                                                         <button v-if="username == 'admin'" @click="modifyAnswer(currentAnswer.qid)">수정</button>
                                                     </p>
@@ -236,24 +220,7 @@
                                             <p v-if="questions == []">
                                                 문의사항이 없습니다.
                                             </p>
-                                            <!--
-                                            <p id="paging">
-                                                <button style="color:white; background-color:rgb(22, 160, 133)">1</button>
-                                                <button>2</button>
-                                                <button >3</button>
-                                                <button>4</button>
-                                            </p>
-                                            -->
-                                            <!-- 페이징 부트스트랩 코드 -->
-                                            <!-- <nav style="z-index: -1;">
-                                                    <ul class="pagination pagination-sm d-flex justify-content-center">
-                                                    <li class="page-item active" aria-current="page">
-                                                        <span class="page-link">1</span>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    </ul>
-                                                </nav>    -->
+                       
                                         </div>   
                                         <!-- Q&A 화면 구성 끝-->
                                     </div>
@@ -278,6 +245,7 @@
     import reviewservice from '../services/reviewservice';
     import reviewreplyservice from '../services/reviewreply.service';
     import FaqDataService from '../services/FaqDataService';
+
     export default {
       name: 'ProductDetail',
       data() {
@@ -339,17 +307,20 @@
         }
       },
       methods: {
-        toPayment(pid){
-            pid = this.$route.params.pid;
-                    console.log(pid);
-                    ProductDataService.getProduct(pid)
-                    .then(response => {
-                        this.currentProduct = response.data;
-                        console.log(response.data);
-                    }).catch(e => {
-                        console.log(e);
-                    });
-                    var idToken = window.localStorage.getItem("user");
+              toPayment(pid){
+            var idToken = window.localStorage.getItem("user");
+
+            if(idToken != null) {
+                pid = this.$route.params.pid;
+                console.log(pid);
+                ProductDataService.getProduct(pid)
+                .then(response => {
+                    this.currentProduct = response.data;
+                    console.log(response.data);
+                }).catch(e => {
+                    console.log(e);
+                });
+                    idToken = window.localStorage.getItem("user");
                     var jsonIdToken = JSON.parse(idToken);
                     this.cart.username = jsonIdToken.username;
                     console.log(jsonIdToken.username);
@@ -370,6 +341,11 @@
                         console.log(e);
     
                     })
+            } else {
+                alert("로그인 후 이용하세요.");
+                this.$router.push("/login");
+            }
+
         },
 
 
@@ -391,42 +367,53 @@
                 console.log(e);
             })
         },
-        putintoCart(pid){
-            pid = this.$route.params.pid;
-            console.log(pid);
-            ProductDataService.getProduct(pid)
-            .then(response => {
-                this.currentProduct = response.data;
-                console.log(response.data);
-            }).catch(e => {
-                console.log(e);
-            });
-            var idToken = window.localStorage.getItem("user");
-            var jsonIdToken = JSON.parse(idToken);
-            this.cart.username = jsonIdToken.username;
-            console.log(jsonIdToken.username);
-            var newCart = {
-                product : this.currentProduct,
-                username: this.cart.username,
-                pquantity: this.cart.pquantity
-            };
-            cartService.create(newCart)
-            .then(response => {
-                this.cart = response.data;
-                console.log(response.data);
-                console.log(this.currentProduct.pid);
-                var confirm 
-                = window.confirm("해당 상품을 장바구니에 추가하였습니다. 장바구니로 이동하시겠습니까?")
-                if(confirm){
-                    this.$router.push({name: 'cartlist'})
-                } else {
-                    this.$router.go(0);
-                }
-            }).catch(e => {
-                console.log(e);
+      putintoCart(pid){
 
-            })
+            var idToken = window.localStorage.getItem("user");
+
+            if( idToken != null ) {
+
+                pid = this.$route.params.pid;
+                console.log(pid);
+                ProductDataService.getProduct(pid)
+                .then(response => {
+                    this.currentProduct = response.data;
+                    console.log(response.data);
+                }).catch(e => {
+                    console.log(e);
+                });
+                idToken = window.localStorage.getItem("user");
+                var jsonIdToken = JSON.parse(idToken);
+                this.cart.username = jsonIdToken.username;
+                console.log(jsonIdToken.username);
+                var newCart = {
+                    product : this.currentProduct,
+                    username: this.cart.username,
+                    pquantity: this.cart.pquantity
+                };
+                cartService.create(newCart)
+                .then(response => {
+                    this.cart = response.data;
+                    console.log(response.data);
+                    console.log(this.currentProduct.pid);
+                    var confirm 
+                    = window.confirm("해당 상품을 장바구니에 추가하였습니다. 장바구니로 이동하시겠습니까?")
+                    if(confirm){
+                        this.$router.push({name: 'cartlist'})
+                    } else {
+                        this.$router.go(0);
+                    }
+                }).catch(e => {
+                    console.log(e);
+
+                })
+            } else {
+                alert("로그인 후 이용하세요.");
+                this.$router.push("/login");
+            }
+
         },
+
 
         retrieveQuestions() {   // 전체 문의글 목록
             QuestionDataService.getAll(this.$route.params.pid)
@@ -665,12 +652,12 @@
     .product_name {
         margin-top: 30px;
         margin-left: -50px;
-        width: 140px;
+        width: 200px;
     }
     
     .product_price {
         margin-top: 80px;
-        margin-left: -140px;
+        margin-left: -200px;
     }
     
     .product_qunatity {
@@ -775,7 +762,7 @@
     }
     
     #prdDetailContent {
-        margin-top: 0px;
+        margin-top: 0px; 
         margin-left: -150px; 
         width: 1100px; 
         height: 1000px; 

@@ -8,8 +8,8 @@
             <table>
                 <thead>
                     <tr style="background-color: rgb(224,224,224); border-top: sold 1.5px black;">
-                        <th style="width: 90%;">{{currentNotice.ntitle}}</th>
-                        <th style="width: 10%;"></th>
+                        <th style="width: 85%;">{{currentNotice.ntitle}}</th>
+                        <th style="width: 15%;"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,7 +17,7 @@
                      <td style="font-weight: bold; text-align: right; border-bottom: solid 1px lightgray;">작성일<br>
                         수정일<br>
                         조회수</td>
-                        <td style="text-align: right;; border-bottom: solid 1px lightgray;">{{currentNotice.nrdate}}
+                        <td style="text-align: right; border-bottom: solid 1px lightgray;">{{currentNotice.nrdate}}
                             <br>{{currentNotice.nmodifydate}}
                             <br>{{currentNotice.nhit}}
                         </td>
@@ -25,7 +25,7 @@
                         
                     </tr>
                     <tr style="text-align: left;">
-                        <td><pre>{{currentNotice.ncontent}}</pre>
+                        <td style="max-width: 1050px;"><pre>{{currentNotice.ncontent}}</pre>
                         </td>
                         <td></td>
                         
@@ -108,10 +108,10 @@ export default {
 
 /* 셀 가로 길이 설정 */
 #notice-main tbody tr td:nth-child(1) { /* 구분 */
-    width: 15%;
+    
 }
 #notice-main tbody tr td:nth-child(2) { /* 제목 */
-    width: 60%;
+   
     text-align: left;
     padding-top: 15px;
     padding-bottom: 15px;
