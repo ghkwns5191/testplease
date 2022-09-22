@@ -2,7 +2,7 @@
 <div>
     <side-menu></side-menu>
     <div id="root" class="root">
-        <side-menu></side-menu>
+        
 
         <label class="title">
             <h3>QnA</h3>
