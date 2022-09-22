@@ -19,7 +19,7 @@
   margin-top: 20px; margin-left: 50px;">
   식물에게 자신의 공간 한편을 내어주는 사람들, 식물과 함께하는 사람들, 식물을 사랑하는 사람들을 위한 공간입니다.<br>
   트레플은 반려식물과 함께하는 더욱 건강하고 행복한 삶을 추구합니다.</P> <br>
-   <a href="#" style=" float:left; margin-left: 50px; color: white; text-align: center; line-height: 35px; vertical-align: middle; text-decoration: none; width: 100px; height: 35px;  font-size: 14px; font-weight: bold; background-color: rgb(22, 160, 133); margin-top: 15px;">VIEW MORE</a> <br>
+   <router-link to="/about" style=" float:left; margin-left: 50px; color: white; text-align: center; line-height: 35px; vertical-align: middle; text-decoration: none; width: 100px; height: 35px;  font-size: 14px; font-weight: bold; background-color: rgb(22, 160, 133); margin-top: 15px;">VIEW MORE</router-link> <br>
    
    <p style="font-size: 30px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 150px; margin-left: 50px;">
