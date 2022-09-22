@@ -77,7 +77,7 @@
                                     <div id="tab2" class="cont">
                                         <!-- Review 화면 구성 시작-->
                                         <div id="reviewContent">
-                                            <h3>Review</h3> <hr><div>  <button type="button" id="writeReviewBtn" @click="addReview" >리뷰쓰기</button>
+                                            <h3>Review</h3> <hr><div>  <button type="button" id="writeReviewBtn" @click="addReview" v-if="username != null">리뷰쓰기</button>
                                                 </div>
                                                 <div v-if="replyClicked == true" id="reviewDetail">
                                                     <h4> {{currentReview.rtitle}}</h4>
@@ -141,7 +141,7 @@
                                         <!-- Q&A 화면 구성 시작 -->
                                         <div id="qnaContent">
                                             <h3>FAQ/Q&A</h3> <hr>
-                                            <button type="button" id="createqnaBtn" @click="addqna_customer()">문의하기</button>
+                                            <button type="button" id="createqnaBtn" @click="addqna_customer()" v-if="username != null">문의하기</button>
 
                                             <!--faq상세 내용-->
                                             <div v-if="faqShow" id="questionDetail">
@@ -286,7 +286,7 @@
             currentIndex: -1,
             count: 1,
             pquantity: 0,
-            username: "",
+            username: null,
             currentReview: null,
             reviewReplyList: [],
             replyClicked: false,
